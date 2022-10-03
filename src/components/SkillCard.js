@@ -2,8 +2,12 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 export default function SkillCard({skill}) {
+  if (skill === '') {
+    throw new Error('Coloque um valor válido');
+  }
+
   return (
-    <TouchableOpacity key={skill} style={styles.buttonSkill}>
+    <TouchableOpacity style={styles.buttonSkill}>
       <Text style={styles.textSkill}> {skill} </Text>
     </TouchableOpacity>
   );
